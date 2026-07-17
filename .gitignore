@@ -1,0 +1,5 @@
+*.csv
+__pycache__/
+data/
+.venv/
+risco_de_credito.egg-info/

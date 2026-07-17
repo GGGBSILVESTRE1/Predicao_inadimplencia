@@ -1,0 +1,46 @@
+Credit Default Risk — Predição de inadimplência para crédito pessoal
+
+Modelo preditivo de risco de crédito para identificar clientes com maior probabilidade de inadimplência,
+utilizando dados cadastrais, financeiros e histórico de crédito
+
+Dataset: [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk) (Kaggle)
+
+
+# Como rodar
+
+git clone https://github.com/GGGBSILVESTRE1/credit-risk-model.git
+cd credit-risk-model
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e .
+
+
+
+
+# Estrutura do dataset
+
+application_train/test  ←── É O CENTRO. Cada linha = 1 pedido de empréstimo.
+       │
+       │ SK_ID_CURR (chave do cliente)
+       │
+       ├──→ bureau ←── Histórico de crédito do cliente em OUTRAS
+       │       │        instituições (ex: outros bancos, Serasa).
+       │       │        Cada linha = 1 crédito anterior em outro lugar.
+       │       │
+       │       └──→ bureau_balance ←── Saldo mensal de cada crédito
+       │                                do bureau. Granularidade: mês.
+       │
+       ├──→ previous_application ←── Pedidos ANTERIORES do mesmo
+       │       │                      cliente NA Home Credit.
+       │       │                      (aprovados, recusados, cancelados)
+       │       │
+       │       ├──→ credit_card_balance ←── Se o crédito anterior era
+       │       │                            cartão, aqui tem o saldo mensal.
+       │       │
+       │       ├──→ installments_payments ←── Parcelas pagas (ou não)
+       │       │                               de créditos anteriores.
+       │       │
+       │       └──→ POS_CASH_balance ←── Saldo mensal de créditos
+       │                                  POS (ponto de venda) ou cash.
+       │
+       └──→ HomeCredit_columns_description.csv ←── DICIONÁRIO. Leia isso.
