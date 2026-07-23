@@ -24,7 +24,7 @@ application_train/test  ←── É O CENTRO. Cada linha = 1 pedido de emprést
        │ SK_ID_CURR (chave do cliente)
        │
        ├──→ bureau ←── Histórico de crédito do cliente em OUTRAS
-       │       │        instituições (ex: outros bancos, Serasa).
+       │       │        instituições.
        │       │        Cada linha = 1 crédito anterior em outro lugar.
        │       │
        │       └──→ bureau_balance ←── Saldo mensal de cada crédito
@@ -43,4 +43,4 @@ application_train/test  ←── É O CENTRO. Cada linha = 1 pedido de emprést
        │       └──→ POS_CASH_balance ←── Saldo mensal de créditos
        │                                  POS (ponto de venda) ou cash.
        │
-       └──→ HomeCredit_columns_description.csv ←── DICIONÁRIO. Leia isso.
+       └──→ HomeCredit_columns_description.csv ←── DICIONÁRIO.
